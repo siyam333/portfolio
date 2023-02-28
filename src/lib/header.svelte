@@ -1,30 +1,27 @@
 <script>
   import { onMount } from "svelte";
-  import Manu from "../assets/header/manu.jpeg";
-  import real from "../assets/header/real.jpeg";
-  import news from "../assets/header/news.jpeg";
-  import setup from "../assets/header/setup.jpg";
-  import movie from "../assets/header/movie.jpg";
-  import code from "../assets/header/code.jpg";
+  import manutd from "../assets/header/manutd.jpg";
   import aww from "../assets/header/aww.png";
+  import code from "../assets/header/code.jpg";
   import figma from "../assets/header/figma.png";
+  import movie from "../assets/header/movie.jpg";
+  import news from "../assets/header/news.jpeg";
+  import paris from "../assets/header/paris.jpg";
   import real2 from "../assets/header/real2.jpg";
-  import travel from "../assets/header/travel.jpg";
   import rot from "../assets/header/rot.png";
-  
-  let header,
-    first,
-    second,
-    third,
-    top,
-    y;
-  
-    onMount(()=>{
-      top.addEventListener("click",()=>{
-    window.scrollTo({top:0})
-  })
-    })
-  
+  import Road from "../assets/header/road.png";
+  import css from "../assets/header/css.png";
+  import mdn from "../assets/header/mdn.png";
+  import stack from "../assets/header/stack.png";
+
+  let header, first, second, third, top, y;
+
+  onMount(() => {
+    top.addEventListener("click", () => {
+      window.scrollTo({ top: 0 });
+    });
+  });
+
   const scrollToElement = ({ target }) => {
     const el = document.getElementById(target.href.split("#").at(-1));
     el.scrollIntoView({
@@ -32,27 +29,20 @@
     });
   };
 
-//   const scroller = new LocomotiveScroll({
-//   el: document.querySelector('[data-scroll-container]'),
-//   smooth: true
-// });
+  //   const scroller = new LocomotiveScroll({
+  //   el: document.querySelector('[data-scroll-container]'),
+  //   smooth: true
+  // });
 
   function entry() {
-  
-
-    document.addEventListener("scroll",()=>{
-      const transformValue = window.scrollY * 0.1;
-      first.style = `transform:translateX(${transformValue}px);transition:all 1s`
-      second.style = `transform:translateX(-${transformValue}px);transition:all 1s`
-      third.style = `transform:translateX(${transformValue}px);transition:all 1s`
-    })
-    
-
-    
+    document.addEventListener("scroll", () => {
+      const transformValue = window.scrollY * 0.2;
+      first.style = `transform:translateX(${transformValue}px);transition:all 1s`;
+      second.style = `transform:translateX(-${transformValue}px);transition:all 1s`;
+      third.style = `transform:translateX(${transformValue}px);transition:all 1s`;
+    });
   }
-  function exit() {
-    
-  }
+  function exit() {}
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const event = entry.isIntersecting ? "enterViewport" : "exitViewport";
@@ -68,7 +58,7 @@
 <body>
   <header bind:this={header}>
     <ul>
-      <li bind:this={top} ><a href="#0">HOME</a> </li>
+      <li bind:this={top}><a href="#0">HOME</a></li>
       <li>
         <a
           data-tinro-ignore
@@ -90,7 +80,7 @@
           href="#project">PROJECTS</a
         >
       </li>
-      
+
       <li>
         <a
           data-tinro-ignore
@@ -102,9 +92,9 @@
   </header>
 
   <main>
-    <h2>HEY, SIYAM here</h2>
-    <h2>FRONT-END <span>web</span> developer</h2>
-    <h2>TECHNOPHILE | <span>ASTUTE</span></h2>
+    <h2>Hey, SIYAM here</h2>
+    <h2>Front-End <span>web</span> Developer</h2>
+    <h2>Technophile | <span>Astute</span></h2>
   </main>
   <div
     class="abtwrap"
@@ -114,9 +104,10 @@
   >
     <div class="about">
       <div class="child" bind:this={first}>
-        <div><img src={Manu} alt="" /></div>
-        <div><img src={real} alt="" /></div>
+        <div><img src={news} alt="" /></div>
+        <div><img src={mdn} alt="" /></div>
         <div><img src={aww} alt="" /></div>
+        <div><img src={stack} alt="" /></div>
       </div>
       <div
         class="child"
@@ -125,10 +116,13 @@
         data-scroll-direction="horizontal"
         data-scroll-speed="1"
       >
-        <div><img src={news} alt="" /></div>
-        <div><img src={setup} alt="" /></div>
+        <div><img src={paris} alt="" /></div>
+        <div><img src={manutd} alt="" /></div>
+
+        <div><img src={Road} alt="" /></div>
         <div><img src={real2} alt="" /></div>
-        <div><img src={travel} alt="" /></div>
+
+        <div><img src={css} alt="" /></div>
       </div>
       <div class="child" bind:this={third}>
         <div><img src={movie} alt="" /></div>
@@ -168,10 +162,10 @@
     color: aliceblue;
     font-weight: 600;
   }
-  header > ul > li{
+  header > ul > li {
     font-weight: 600;
   }
-  
+
   main {
     height: 60vh;
     display: flex;
@@ -179,15 +173,19 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
+    font-family: "Changa One", cursive;
   }
   main > h2 {
     margin: 0;
+    /* font-weight: 1000; */
   }
   main > h2:nth-child(1) {
     font-size: 3em;
+    /* font-weight: 1000; */
   }
   main > h2:nth-child(2) {
     font-size: 2.5em;
+    /* font-weight: 1000; */
   }
   main > h2:nth-child(2) > span {
     font-family: "Lobster Two", cursive;
@@ -215,17 +213,36 @@
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     will-change: transform;
   }
-  /* .about>.child:nth-child(2){
-    transform: matrix3d(  1, 0, 0, 0,  0,  1, 0, 0, 0, 0,1,0,0,0,0,1);transition:all 1s
-  } */
-  img {
+  .child > div {
     height: 20vw;
     width: 28vw;
-    opacity: 0.7;
+    overflow: hidden;
+    display: grid;
+    justify-content: center;
   }
+
+  img {
+    height: 20vw;
+    width: 29vw;
+  }
+  .about > .child:nth-child(2) > div:nth-child(2) > img {
+    height: 30vw;
+    width: 27vw;
+  }
+  .about > .child:nth-child(2) > div:nth-child(3) > img {
+    height: 24vw;
+    width: 30vw;
+  }
+  .about > .child:nth-child(1) > div:nth-child(4) > img {
+    height: 20vw;
+    width: 30vw;
+  }
+  .about > .child:nth-child(1) > div:nth-child(2) > img {
+      width: 40vw;
+    }
   @media screen and (max-width: 87.5em) {
     .about {
-      height: 50vh;
+      height: 80vh;
     }
   }
   @media screen and (max-width: 52.5em) {
@@ -236,11 +253,13 @@
   @media screen and (max-width: 43.5em) {
     .about {
       height: 35vh;
+      row-gap: 0.3em;
     }
   }
   @media screen and (max-width: 30em) {
     .about {
       height: 50vh;
+      
     }
     main > h2:nth-child(1) {
       font-size: 2.5em;
@@ -248,24 +267,37 @@
     main > h2:nth-child(2) {
       font-size: 2em;
     }
-    main > h2:nth-child(2) > span {
-      font-family: "Lobster Two", cursive;
-      color: red;
-    }
-    main > h2:nth-child(3) > span {
-      color: rgb(227, 221, 42);
-    }
-    img {
-      height: 40vw;
-      width: 48vw;
-      opacity: 1;
-    }
+
     header > ul > li > a {
       text-decoration: none;
       color: aliceblue;
       font-size: 0.8em;
       font-weight: 600;
     }
-   
+
+    .child > div {
+      height: 20vh;
+      width: 28vh;
+      
+    }
+    img {
+      height: 20vh;
+      width: 29vh;
+    }
+    .about > .child:nth-child(2) > div:nth-child(2) > img {
+      height: 30vh;
+      width: 27vh;
+    }
+    .about > .child:nth-child(2) > div:nth-child(3) > img {
+      height: 20vh;
+      width: 30vh;
+    }
+    .about > .child:nth-child(1) > div:nth-child(4) > img {
+      height: 20vh;
+      width: 30vh;
+    }
+    .about > .child:nth-child(1) > div:nth-child(2) > img {
+      width: 37vh;
+    }
   }
 </style>

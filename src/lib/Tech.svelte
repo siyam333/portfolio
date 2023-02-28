@@ -177,7 +177,8 @@
         justify-content: center;
         padding: 2em;
         gap: 3.5em;
-        background-color: rgb(184, 184, 184);
+        background: rgb(229,250,254);
+background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1) 40%, rgba(161,176,179,1) 62%, rgba(161,176,179,1) 78%, rgba(161,176,179,1) 100%);
         scroll-behavior: smooth;
     }
     .box {
@@ -204,7 +205,7 @@
         margin-top: 13.25em;
     }
     .box:hover {
-        background-color: #0c0c0e;
+        background-color: rgba(161,176,179);
     }
     .container:hover .img {
         transform: translateY(-4.25rem);
@@ -262,7 +263,7 @@
         }
        
         .reveal > p {
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
     }
 </style>

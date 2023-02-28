@@ -2,7 +2,7 @@
     import git from "../assets/footer/github.svg";
     import gmail from "../assets/footer/gmail.svg";
     import insta from "../assets/footer/instagram.svg";
-    import tweet from "../assets/footer/twitter.svg";
+    import Linkdin from "../assets/footer/linkdin.svg"
     import link from "../assets/footer/link.png"
 </script>
 
@@ -11,23 +11,17 @@
         <h2>CONTACT</h2>
         <div class="links">
             <a href="https://github.com/siyam333" target="_blank" rel="noreferrer"><img class="git" src={git} alt="" /></a><a href="https://www.instagram.com/siyam_333/" target="_blank" rel="noreferrer"><img src={insta} alt="" /></a>
+            <a href="https://www.linkedin.com/in/siyam-sundar-5330a324a/" target="_blank" rel="noreferrer"> <img src={Linkdin} alt="">
+            </a><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%73%69%79%61%6D%73%75%6E%64%61%72%33%33%33%40%67%6D%61%69%6C%2E%63%6F%6D"><img src={gmail} alt=""></a>
             
             
-            <!-- <img src={tweet} alt="" /> -->
-            <!-- <img src={gmail} alt="" /> -->
         </div>
     </div>
     <div class="thanks">
         <div class="inspire">
-            <h3>INSPIRED FROM</h3>
-            <ul>
-                <li>
-                    <a style:--url="url({link})" href="https://bryanohagan.com/"
-                        > bryanohagan.com</a
-                    >
-                </li>
-                <li> <a style:--url="url({link})" href="https://bayviewholidayapartments.com/">bayviewholidayapartments.com</a></li>
-            </ul>
+            <h3>INSPIRE</h3>
+            <h3>INNOVATE</h3>
+            <h3>BURST IT OUT</h3>
         </div>
         <div class="ppl">
             <h3>SPECIAL THANKS TO:</h3>
@@ -72,8 +66,8 @@ background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1)
         gap: 0.4em;
     }
     .links >a> img {
-        height: 2.5em;
-        width: 2.5em;
+        height: 2em;
+        width: 2em;
     }
     
     .thanks{
@@ -95,16 +89,16 @@ background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1)
         justify-items: center;
     }
     .inspire{
-        display: grid;
-        justify-items: center;
-    }
-    .inspire>ul>li>a{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 0.2em;
     }
-    a:before{
+    .inspire>h3{
+        margin: 0;
+    }
+    
+    .thanks>div>ul>li>a:before{
         content: '';
         background: var(--url) center/1em;
         width: 1em;
@@ -113,12 +107,7 @@ background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1)
         
     }
     @media screen and (max-width:30em){
-        .inspire>ul>li>a{
-            font-size: 0.8em;
-        }
-        .inspire>ul{
-            gap: 0.5em;
-        }
+        
         .ppl>ul>li{
             font-size: 0.8em;
         }

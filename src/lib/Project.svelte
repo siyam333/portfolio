@@ -7,8 +7,8 @@
         document.addEventListener("wheel", (e) => {
             if (e.deltaY > 0) {
                 let top = pro1.getBoundingClientRect().top;
-                let value=top/16
-                if (value <= 18.75 ) {
+                let value = top / 16;
+                if (value <= 18.75) {
                     pro1.style = `transform:rotate(0deg);translateX(-6em);transition:all 1s;`;
                     pro2.style = `transform:rotate(0deg);translateX(6em);transition:all 1s;`;
                 }
@@ -28,7 +28,7 @@
 </script>
 
 <body id="project">
-    <h2 class="heading">PROJECTS</h2>
+    <h2 class="heading">Projects</h2>
     <div class="wrap" use:viewport on:entry={entry} on:exit={exit}>
         <div class="project" bind:this={pro1}>
             <div class="img"><img src={Port} alt="" /></div>
@@ -37,7 +37,7 @@
                     <h2>Portfolio</h2>
                     <img src={Arrow} class="arrow" alt="" />
                 </div>
-                <p>a simple portfolio page mage with svelte</p>
+                <p>a simple portfolio page made with svelte</p>
             </div>
         </div>
         <div class="project" bind:this={pro2}>
@@ -54,7 +54,6 @@
 </body>
 
 <style>
-    /* @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@800&display=swap"); */
     body {
         width: 100vw;
         font-size: 2em;
@@ -62,9 +61,12 @@
     }
     .heading {
         display: flex;
-        padding: 2.5em;
+        
         justify-content: center;
         align-items: center;
+        font-weight: 1000;
+        font-size: 5em;
+        font-family: "Bebas Neue", cursive;
     }
     .wrap {
         display: flex;
@@ -72,10 +74,11 @@
         gap: 1em;
         justify-content: center;
         padding: 2em;
+        margin-bottom: 1em;
     }
     .project {
-        width: 20em;
-        height: 27em;
+        width: 17em;
+        height: 24em;
         background-color: rgb(41, 41, 41);
         overflow: hidden;
         border: 0.1em solid white;
@@ -88,12 +91,12 @@
     }
     .img {
         position: absolute;
-        width: 20em;
-        height: 27em;
+        width: 17em;
+        height: 24em;
         overflow: hidden;
     }
     .img > img {
-        width: 20em;
+        width: 17em;
         height: 100%;
         object-fit: cover;
         overflow: hidden;
@@ -106,10 +109,11 @@
         z-index: 9999;
         color: aliceblue;
         padding: 0.7em;
-        width: 20em;
+        width: 17em;
     }
     .prohead > div > h2 {
         font-size: 1em;
+        font-family: "Bebas Neue", cursive;
     }
     .prohead > p {
         font-size: 0.7em;
@@ -134,6 +138,9 @@
     }
 
     @media screen and (max-width: 53.5em) {
+        .heading{
+            font-size: 3em;
+        }
         .img {
             width: 15em;
             height: 22em;
@@ -165,29 +172,40 @@
             width: 15em;
         }
         .prohead > div > h2 {
-        font-size: 0.7em;
-    }
-    .prohead > p {
-        font-size: 0.5em;
-    }
+            font-size: 0.7em;
+        }
+        .prohead > p {
+            font-size: 0.5em;
+        }
     }
     @media screen and (max-width: 30em) {
+        .heading{
+            font-size: 2.5em;
+        }
         .img {
             width: 10em;
-            height: 20em;
+            height: 15em;
         }
         .project {
             width: 10em;
-            height: 20em;
+            height: 15em;
         }
         .prohead {
             width: 10em;
+            padding: 0.3em;
         }
         .img > img {
             width: 10em;
         }
-        .heading-sub>h2{
+        .heading-sub {
+            gap: 0.3em;
+        }
+        .heading-sub > h2 {
             font-size: 0.7em;
+        }
+        .arrow {
+            height: 1em;
+            width: 1em;
         }
         .wrap > .project:nth-child(1) {
             transform: rotate(0deg) translateX(0em);
@@ -195,7 +213,7 @@
         .wrap > .project:nth-child(2) {
             transform: rotate(0deg) translateX(0em);
         }
-        .wrap{
+        .wrap {
             padding: 0.3em;
         }
     }
