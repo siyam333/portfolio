@@ -95,9 +95,8 @@
         width: 45vw;
         height: 80vh;
         font-family: "Bebas Neue", cursive;
-        font-size: large;
-
         gap: 1em;
+        font-size: 2.5em;
     }
 
     /* .idea {
@@ -139,12 +138,7 @@
         color: red;
     }
 
-    @media screen and (max-width: 93.75em) {
-        .doin {
-            font-size: 2.5em;
-        }
-        
-    }
+    
     @media screen and (max-width: 50.75em) {
         .doin {
             font-size: 1.7em;
