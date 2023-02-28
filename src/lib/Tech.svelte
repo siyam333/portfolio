@@ -55,8 +55,7 @@
                 <div class="reveal">
                     <h2>JAVASCRIPT</h2>
                     <p>
-                        I am good in a beginner level of programming/scripting
-                        using JAVASCRIPT, but most importantly i love it
+                        I'm passionate about programming and scripting with JavaScript and am excited to continue learning.While I'm confident in my beginner-level skills, I'm eager to dive deeper into advanced topics like API integrations and data structures.
                     </p>
                 </div>
             </div>
@@ -77,7 +76,7 @@
                 <div class="reveal">
                     <h2>HTML</h2>
                     <p>
-                        A simple standard markup language where i am familiar with but its a sea and we have shortcuts where i am on the progress of learning
+                        I am familar with HTML, but it's a vast sea of tags and attributes. As I continue to learn, I'm discovering useful coding techniques and  shortcuts that make the process more efficient. I'm excited about the progress and that drives me.
                     </p>
                 </div>
             </div>
@@ -98,7 +97,7 @@
                 <div class="reveal">
                     <h2>CSS</h2>
                     <p>
-                        I dont prefer to use css frameworks, just css is a beauty. Well even it has shortcuts where i am learning.
+                        I dont prefer to use css frameworks, just css is a beauty. Well even it has shortcuts where i am learning and improvising every day.
                     </p>
                 </div>
             </div>
@@ -119,7 +118,7 @@
                 <div class="reveal">
                     <h2>C</h2>
                     <p>
-                        I worked on C programming for 3 months but i must get to know more about it to enrich my knowledge.
+                        I worked on C programming for 3 months but i must get to know more about it to enrich my knowledge(need a big revamp).
                     </p>
                 </div>
             </div>
@@ -140,7 +139,7 @@
                 <div class="reveal">
                     <h2>PYTHON</h2>
                     <p>
-                        The simplest lang where i came across in my life and i have a basic knowledge and 1 year of experience with SQL database too.
+                        The simplest lang where i came across in my life and i have a basic knowledge and 1 year of experience with SQL database too.Further i am planning to learn the API's in python which helps in AI and DS.
                     </p>
                 </div>
             </div>
@@ -161,7 +160,7 @@
                 <div class="reveal">
                     <h2>SVELTE</h2>
                     <p>
-                        The only framework i use and made me to love it. The idea of surgical injection is too good.
+                        The only framework i use and made me to love it. The idea of surgical injection is too good.I have been working on with svelte and have a good understing about it.
                     </p>
                 </div>
             </div>
