@@ -72,8 +72,8 @@ background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1)
         gap: 0.4em;
     }
     .links >a> img {
-        height: 4vh;
-        width: 4vw;
+        height: 2.5em;
+        width: 2.5em;
     }
     
     .thanks{

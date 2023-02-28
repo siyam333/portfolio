@@ -68,7 +68,14 @@
 <body>
   <header bind:this={header}>
     <ul>
-      <li bind:this={top} class="top">HOME</li>
+      <li bind:this={top} ><a href="#0">HOME</a> </li>
+      <li>
+        <a
+          data-tinro-ignore
+          on:click|preventDefault={scrollToElement}
+          href="#abt">ABOUT</a
+        >
+      </li>
       <li>
         <a
           data-tinro-ignore
@@ -83,13 +90,7 @@
           href="#project">PROJECTS</a
         >
       </li>
-      <li>
-        <a
-          data-tinro-ignore
-          on:click|preventDefault={scrollToElement}
-          href="#abt">ABOUT</a
-        >
-      </li>
+      
       <li>
         <a
           data-tinro-ignore
@@ -170,9 +171,7 @@
   header > ul > li{
     font-weight: 600;
   }
-  .top:hover{
-    cursor: pointer;
-  }
+  
   main {
     height: 60vh;
     display: flex;
@@ -267,5 +266,6 @@
       font-size: 0.8em;
       font-weight: 600;
     }
+   
   }
 </style>
