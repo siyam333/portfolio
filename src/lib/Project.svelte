@@ -35,7 +35,9 @@
             <div class="prohead">
                 <div class="heading-sub">
                     <h2>Portfolio</h2>
-                    <img src={Arrow} class="arrow" alt="" />
+                    <div>
+                        <a href="https://siyam333.github.io/portfolio/" target="_blank" rel="noreferrer"><img src={Arrow} class="arrow" alt="" /></a>
+                    </div>
                 </div>
                 <p>a simple portfolio page made with svelte</p>
             </div>
@@ -45,7 +47,10 @@
             <div class="prohead">
                 <div class="heading-sub">
                     <h2>Region of Tournments</h2>
-                    <img src={Arrow} class="arrow" alt="" />
+                    <div>
+                        <a href="https://github.com/Rajaniraiyn/rot-landing-page" target="_blank" rel="noreferrer"><img src={Arrow} class="arrow" alt="" /></a>
+                    </div>
+                    
                 </div>
                 <p>Platform to create a gaming community</p>
             </div>
@@ -61,7 +66,7 @@
     }
     .heading {
         display: flex;
-        
+
         justify-content: center;
         align-items: center;
         font-weight: 1000;
@@ -84,10 +89,10 @@
         border: 0.1em solid white;
     }
     .wrap > .project:nth-child(1) {
-        transform: rotate(10deg) translateX(6em);
+        transform: rotate(10deg) translate(6em, -5em);
     }
     .wrap > .project:nth-child(2) {
-        transform: rotate(-10deg) translateX(-6em);
+        transform: rotate(-10deg) translate(-6em, -4em);
     }
     .img {
         position: absolute;
@@ -95,6 +100,7 @@
         height: 24em;
         overflow: hidden;
     }
+
     .img > img {
         width: 17em;
         height: 100%;
@@ -130,6 +136,10 @@
         width: 2em;
         filter: invert(1);
     }
+    .arrow:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
 
     .project:hover .img > img {
         transform: scale(1.1);
@@ -138,7 +148,7 @@
     }
 
     @media screen and (max-width: 53.5em) {
-        .heading{
+        .heading {
             font-size: 3em;
         }
         .img {
@@ -179,7 +189,7 @@
         }
     }
     @media screen and (max-width: 30em) {
-        .heading{
+        .heading {
             font-size: 2.5em;
         }
         .img {
