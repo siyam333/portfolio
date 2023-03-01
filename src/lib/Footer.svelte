@@ -127,6 +127,12 @@
         flex-grow: 1;
         justify-content: space-evenly;
     }
+    .ppl>h3{
+        margin: 0;
+    }
+    .ppl>ul{
+        margin: 0;
+    }
     a {
         text-decoration: none;
         color: rgb(229, 250, 254);
