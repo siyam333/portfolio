@@ -1,6 +1,13 @@
 <script>
     import face from "../assets/about/face.jpg";
-    let idea, one, two, three, four, five;
+    export let theme1
+    if(theme1==false){
+        theme1=!theme1
+    }
+    else{
+        theme1=false
+    }
+    let  one, two, three, four, five;
     function entry() {
         one.style = `transform:translateY(0em);opacity:1;`;
         two.style = `transform:translateY(0em);opacity:1;`;
@@ -35,7 +42,7 @@
             <div class="w2">
                 <div class="idea">
                     <div bind:this={one}>
-                        <p>In order to find my true passion than</p>
+                        <p>In order to find my true passion than </p>
                     </div>
                     <div bind:this={two}>
                         <p>spending my time playing football,</p>
@@ -138,10 +145,9 @@
         color: red;
     }
 
-    
-    @media screen and (max-width: 50.75em) {
+    @media screen and (max-width: 56.75em) {
         .doin {
-            font-size: 1.7em;
+            font-size: 1.8em;
         }
         
     }

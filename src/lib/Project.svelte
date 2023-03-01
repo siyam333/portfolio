@@ -3,6 +3,13 @@
     import Port from "../assets/project/portfolio.png";
     import Arrow from "../assets/project/arrow.png";
     import { onMount } from "svelte";
+    export let theme1
+    if(theme1==false){
+        theme1=!theme1
+    }
+    else{
+        theme1=false
+    }
     let container, two, one, three, four, five, six, seven, eight;
     let pro1, pro2;
     function entry() {
@@ -35,7 +42,7 @@
         seven.style.transform = `translateX(-2em)`;
         eight.style.transform = `translateX(0.2em)`;
     }
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             const event = entry.isIntersecting ? "entry" : "exit";
@@ -58,7 +65,10 @@
 </script>
 
 <body id="project">
-    <div bind:this={container} class="heading">
+    <div
+        bind:this={container}
+        class="heading"
+    >
         <p bind:this={one}>P</p>
         <p bind:this={two}>R</p>
         <p bind:this={three}>O</p>
@@ -89,7 +99,7 @@
                         >
                     </div>
                 </div>
-                <p>a simple portfolio page made with svelte</p>
+                <p>A simple portfolio page made with svelte</p>
             </div>
         </div>
         <div class="project" bind:this={pro2}>
@@ -140,7 +150,8 @@
         height: 24em;
         background-color: rgb(41, 41, 41);
         overflow: hidden;
-        border: 0.1em solid white;
+        border: 0.1em solid rgb(229, 250, 254);
+        border-radius: 0.5em;
     }
     .wrap > .project:nth-child(1) {
         transform: rotate(10deg) translate(6em, -5em);
@@ -167,7 +178,7 @@
     .prohead {
         position: absolute;
         z-index: 9999;
-        color: aliceblue;
+        color: rgb(229, 250, 254);
         padding: 0.7em;
         width: 17em;
     }

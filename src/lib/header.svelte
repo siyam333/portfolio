@@ -13,13 +13,63 @@
   import css from "../assets/header/css.png";
   import mdn from "../assets/header/mdn.png";
   import stack from "../assets/header/stack.png";
-
-  let header, first, second, third, top, y;
-
-  onMount(() => {
-    top.addEventListener("click", () => {
-      window.scrollTo({ top: 0 });
+  import menu from "../assets/header/menu.svg";
+  
+  import About from "../lib/About.svelte";
+  import Tech from "../lib/Tech.svelte";
+  import Project from "../lib/Project.svelte";
+  import Footer from "../lib/Footer.svelte";
+  
+  let first,
+    second,
+    third,
+    top,
+    sidemenu,
+    button,
+    lmenu,
+    smenu,
+    mode,
+    modecircle;
+  let active = false;
+  document.addEventListener("load",()=>{
+    movecircle=false
+  })
+  let movecircle = false;
+  
+  function reveal() {
+    button.addEventListener("click", () => {
+      let width = document.body.clientWidth;
+      if (active == false) {
+        active = !active;
+      } else if (width <= 680) {
+        active = false;
+      } else {
+        active = false;
+      }
     });
+  }
+  onMount(() => {
+    reveal();
+    mode.addEventListener("mousedown", () => {
+      if (movecircle == false) {
+        movecircle = !movecircle;
+        document.documentElement.style.setProperty('transition', 'all 0.7s');
+        document.documentElement.style.setProperty('color', '#000000');
+        document.documentElement.style.setProperty('background-color', 'rgb(229, 250, 254)');
+        
+      } else {
+        movecircle = false;
+        document.documentElement.style.setProperty('transition', 'all 0.7s');
+        document.documentElement.style.setProperty('color', 'rgb(229, 250, 254)');
+        document.documentElement.style.setProperty('background-color', '#000000');
+      }
+    });
+    let width = document.body.clientWidth;
+    if (width <= 680) {
+      lmenu.parentNode.removeChild(lmenu);
+    } else {
+      lmenu.parentNode.appendChild(lmenu);
+    }
   });
 
   const scrollToElement = ({ target }) => {
@@ -27,12 +77,10 @@
     el.scrollIntoView({
       behavior: "smooth",
     });
+    if (active == true) {
+      active = !active;
+    }
   };
-
-  //   const scroller = new LocomotiveScroll({
-  //   el: document.querySelector('[data-scroll-container]'),
-  //   smooth: true
-  // });
 
   function entry() {
     document.addEventListener("scroll", () => {
@@ -54,27 +102,74 @@
   }
 </script>
 
-<svelte:window bind:scrollY={y} />
-<body>
-  <header bind:this={header}>
-    <ul>
-      <li bind:this={top}><a href="#0">HOME</a></li>
+<body id="top">
+  <div class="sidebarwrap" class:show={active == true} class:sidemode={movecircle==true}>
+    <div class="sidebar " bind:this={sidemenu}>
+      <ul class="dropmenu">
+        <li bind:this={top}>
+          <a
+            data-tinro-ignore
+            on:click|preventDefault={scrollToElement}
+            href="#top" class:sidelinkmode={movecircle==true}> HOME</a
+          >
+        </li>
+        <li>
+          <a
+            data-tinro-ignore
+            on:click|preventDefault={scrollToElement}
+            href="#abt" class:sidelinkmode={movecircle==true}>ABOUT</a
+          >
+        </li>
+        <li>
+          <a
+            data-tinro-ignore
+            on:click|preventDefault={scrollToElement}
+            href="#tech" class:sidelinkmode={movecircle==true}>TECH STACKS</a
+          >
+        </li>
+        <li>
+          <a
+            data-tinro-ignore
+            on:click|preventDefault={scrollToElement}
+            href="#project" class:sidelinkmode={movecircle==true}>PROJECTS</a
+          >
+        </li>
+
+        <li>
+          <a
+            data-tinro-ignore
+            on:click|preventDefault={scrollToElement}
+            href="#contact" class:sidelinkmode={movecircle==true}>CONTACT</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <header>
+    <ul bind:this={lmenu} class="lmenu">
       <li>
-        <a
+        <a class:linkmode={movecircle==true}
+          data-tinro-ignore
+          on:click|preventDefault={scrollToElement}
+          href="#top">HOME</a
+        >
+      </li>
+      <li>
+        <a class:linkmode={movecircle==true}
           data-tinro-ignore
           on:click|preventDefault={scrollToElement}
           href="#abt">ABOUT</a
         >
       </li>
       <li>
-        <a
+        <a class:linkmode={movecircle==true}
           data-tinro-ignore
           on:click|preventDefault={scrollToElement}
           href="#tech">TECH STACKS</a
         >
       </li>
       <li>
-        <a
+        <a class:linkmode={movecircle==true}
           data-tinro-ignore
           on:click|preventDefault={scrollToElement}
           href="#project">PROJECTS</a
@@ -82,13 +177,25 @@
       </li>
 
       <li>
-        <a
+        <a class:linkmode={movecircle==true}
           data-tinro-ignore
           on:click|preventDefault={scrollToElement}
           href="#contact">CONTACT</a
         >
       </li>
     </ul>
+    <ul class="menuicon" bind:this={smenu}>
+      <li><img bind:this={button} src={menu} alt="" /></li>
+    </ul>
+    <div class="wrapmode">
+      <div class="mode" bind:this={mode}>
+        <div
+          class="circle"
+          bind:this={modecircle}
+          class:move={movecircle == true}
+        />
+      </div>
+    </div>
   </header>
 
   <main>
@@ -133,16 +240,31 @@
     </div>
   </div>
 </body>
-
+<About theme1={movecircle}/>
+<Tech theme1={movecircle}/>
+<Project theme1={movecircle}/>
+<Footer theme1={movecircle}/>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap");
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One&family=Maven+Pro&family=Trirong:wght@200&display=swap');
+
+:root {
+  background-color: rgb(8, 8, 8);
+  color: rgb(229, 250, 254);
+  font-family: 'Maven Pro', sans-serif;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
   header {
     width: 100vw;
     position: fixed;
-    background-color: black;
-    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.581);
+    backdrop-filter: blur(1em);
+    z-index: 9999;
   }
-  header > ul {
+  header > .lmenu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,18 +276,114 @@
     margin-inline-end: 0px;
     padding-inline-start: 0px;
   }
-  header > ul > li {
+  header > .lmenu > li {
     list-style: none;
   }
-  header > ul > li > a {
+  .linkmode{
+    color: black;
+  }
+  header > .lmenu > li > a {
     text-decoration: none;
     color: aliceblue;
     font-weight: 600;
   }
-  header > ul > li {
+  
+  header > .lmenu > li {
     font-weight: 600;
   }
+  .wrapmode {
+    height: 10vh;
+    width: 3.5em;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1em;
+    align-items: center;
+    justify-content: center;
+  }
+  .mode {
+    width: 3em;
+    height: 1.5em;
+    border: 2px solid white;
+    border-radius: 1.1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 0.2em;
+    justify-content: flex-start;
+    transform: translateX(0em);
+    transition: transform 0.5s;
+  }
+  .mode:hover {
+    cursor: pointer;
+  }
 
+  .circle {
+    height: 1.2em;
+    width: 1.2em;
+    background-color: aliceblue;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  .move {
+    transform: translateX(1.7em);
+    transition: transform 0.3s;
+    background-color: rgb(227, 221, 42);
+  }
+  .menuicon {
+    visibility: hidden;
+    display: none;
+    z-index: 999999;
+  }
+
+  .menuicon > li > img {
+    width: 2em;
+  }
+  .sidebarwrap {
+    position: fixed;
+    top: 10vh;
+    bottom: 0;
+    height: 90vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+    z-index: 99999;
+    transform: translateX(-100vw);
+    transition: transform 0.1s ease-in;
+  }
+  .show {
+    transform: translateX(0vw);
+    transition: transform 0.4s ease-in;
+  }
+  .sidemode{
+    background-color: rgb(229, 250, 254);
+    
+  }
+  .dropmenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    gap: 1em;
+  }
+  .dropmenu > li {
+    list-style: none;
+  }
+  .dropmenu > li > a {
+    text-decoration: none;
+    color: rgb(229, 250, 254);
+    font-size: 2em;
+    font-weight: 600;
+  }
+  .dropmenu > li>.sidelinkmode{
+    color: rgb(0, 0, 0);
+  }
   main {
     height: 60vh;
     display: flex;
@@ -177,19 +395,18 @@
   }
   main > h2 {
     margin: 0;
-    /* font-weight: 1000; */
   }
   main > h2:nth-child(1) {
     font-size: 3em;
-    /* font-weight: 1000; */
   }
   main > h2:nth-child(2) {
     font-size: 2.5em;
-    /* font-weight: 1000; */
   }
   main > h2:nth-child(2) > span {
     font-family: "Lobster Two", cursive;
-    color: red;
+    color: rgb(255, 0, 0);
+    font-weight: bolder;
+    font-size: 1.3em;
   }
   main > h2:nth-child(3) > span {
     color: rgb(227, 221, 42);
@@ -238,8 +455,8 @@
     width: 30vw;
   }
   .about > .child:nth-child(1) > div:nth-child(2) > img {
-      width: 40vw;
-    }
+    width: 40vw;
+  }
   @media screen and (max-width: 87.5em) {
     .about {
       height: 80vh;
@@ -250,16 +467,38 @@
       height: 40vh;
     }
   }
-  @media screen and (max-width: 43.5em) {
+  @media screen and (max-width: 42.5em) {
     .about {
       height: 35vh;
       row-gap: 0.3em;
+    }
+    header > .lmenu {
+      display: none;
+      visibility: hidden;
+    }
+    .menuicon {
+      visibility: visible;
+      margin-right: 3em;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 10vh;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 2em;
+      padding-inline-start: 0px;
+    }
+    .menuicon > li {
+      list-style: none;
+    }
+    .menuicon > li > img:hover {
+      cursor: pointer;
     }
   }
   @media screen and (max-width: 30em) {
     .about {
       height: 50vh;
-      
     }
     main > h2:nth-child(1) {
       font-size: 2.5em;
@@ -278,7 +517,6 @@
     .child > div {
       height: 20vh;
       width: 28vh;
-      
     }
     img {
       height: 20vh;
@@ -298,6 +536,9 @@
     }
     .about > .child:nth-child(1) > div:nth-child(2) > img {
       width: 37vh;
+    }
+    main > h2:nth-child(2) > span {
+      font-size: 1em;
     }
   }
 </style>
