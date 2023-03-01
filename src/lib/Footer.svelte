@@ -41,7 +41,7 @@
         flex-wrap: wrap;
         height: 40vh;
         background: rgb(229,250,254);
-background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1) 40%, rgba(161,176,179,1) 62%, rgba(161,176,179,1) 78%, rgba(161,176,179,1) 100%);
+        background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1) 40%, rgba(161,176,179,1) 62%, rgba(161,176,179,1) 78%, rgba(161,176,179,1) 100%);
         width: 100vw;
         color: rgb(0, 0, 0);
     }
@@ -110,6 +110,9 @@ background: radial-gradient(circle, rgba(229,250,254,1) 20%, rgba(199,219,223,1)
         
         .ppl>ul>li{
             font-size: 0.8em;
+        }
+        .contact{
+            border-right: 0px solid rgb(0, 0, 0);
         }
     }
 </style>

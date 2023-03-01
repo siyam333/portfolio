@@ -2,12 +2,22 @@
     import Rot from "../assets/project/rot2.png";
     import Port from "../assets/project/portfolio.png";
     import Arrow from "../assets/project/arrow.png";
+    import { onMount } from "svelte";
+    let container, two, one, three, four, five, six, seven, eight;
     let pro1, pro2;
     function entry() {
         document.addEventListener("wheel", (e) => {
             if (e.deltaY > 0) {
                 let top = pro1.getBoundingClientRect().top;
                 let value = top / 16;
+                one.style.transform = `translateX(0em)`;
+                two.style.transform = `translateY(0em)`;
+                three.style.transform = `translateY(0em)`;
+                four.style.transform = `translate3d(0em,0em,0em)`;
+                five.style.transform = `translateY(0em)`;
+                six.style.transform = `translate3d(0em,0em,0em)`;
+                seven.style.transform = `translateX(0em)`;
+                eight.style.transform = `translateX(0em)`;
                 if (value <= 18.75) {
                     pro1.style = `transform:rotate(0deg);translateX(-6em);transition:all 1s;`;
                     pro2.style = `transform:rotate(0deg);translateX(6em);transition:all 1s;`;
@@ -15,7 +25,16 @@
             }
         });
     }
-    function exit() {}
+    function exit() {
+        one.style.transform = `translateX(-0.3em)`;
+        two.style.transform = `translateY(0.6em)`;
+        three.style.transform = `translateY(0em)`;
+        four.style.transform = `translate3d(0.5em,0.5em,0.7em)`;
+        five.style.transform = `translateY(-0.2em)`;
+        six.style.transform = `translate3d(-2em,0.6em,0.5em)`;
+        seven.style.transform = `translateX(-2em)`;
+        eight.style.transform = `translateX(0.2em)`;
+    }
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             const event = entry.isIntersecting ? "entry" : "exit";
@@ -25,18 +44,42 @@
     function viewport(element) {
         observer.observe(element);
     }
+    onMount(() => {
+        one.style = `transform :translateX(-0.3em);transition: all 2s;`;
+        two.style = `transform :translateY(0.6em);transition: all 2s;`;
+        three.style = `transform :translateY(0em);transition: all 2s;`;
+        four.style = `transform :translate3d(0.5em,0.5em,0.7em);transition: all 2s;`;
+        five.style = `transform :translateY(-0.2em);transition: all 2s;`;
+        six.style = `transform :translate3d(-2em,0.6em,0.5em);transition: all 2s;`;
+        seven.style = `transform :translateX(-2em);transition: all 2s;`;
+        eight.style = `transform :translateX(0.2em);transition: all 2s;`;
+    });
 </script>
 
 <body id="project">
-    <h2 class="heading">Projects</h2>
-    <div class="wrap" use:viewport on:entry={entry} on:exit={exit}>
-        <div class="project" bind:this={pro1}>
+    <div bind:this={container} class="heading">
+        <p bind:this={one}>P</p>
+        <p bind:this={two}>R</p>
+        <p bind:this={three}>O</p>
+        <p bind:this={four}>J</p>
+        <p bind:this={five}>E</p>
+        <p bind:this={six}>C</p>
+        <p bind:this={seven}>T</p>
+        <p bind:this={eight}>S</p>
+    </div>
+    <div class="wrap" >
+        <div class="project" bind:this={pro1} use:viewport on:entry={entry} on:exit={exit}>
             <div class="img"><img src={Port} alt="" /></div>
             <div class="prohead">
                 <div class="heading-sub">
                     <h2>Portfolio</h2>
                     <div>
-                        <a href="https://siyam333.github.io/portfolio/" target="_blank" rel="noreferrer"><img src={Arrow} class="arrow" alt="" /></a>
+                        <a
+                            href="https://siyam333.github.io/portfolio/"
+                            target="_blank"
+                            rel="noreferrer"
+                            ><img src={Arrow} class="arrow" alt="" /></a
+                        >
                     </div>
                 </div>
                 <p>a simple portfolio page made with svelte</p>
@@ -48,9 +91,13 @@
                 <div class="heading-sub">
                     <h2>Region of Tournments</h2>
                     <div>
-                        <a href="https://github.com/Rajaniraiyn/rot-landing-page" target="_blank" rel="noreferrer"><img src={Arrow} class="arrow" alt="" /></a>
+                        <a
+                            href="https://github.com/Rajaniraiyn/rot-landing-page"
+                            target="_blank"
+                            rel="noreferrer"
+                            ><img src={Arrow} class="arrow" alt="" /></a
+                        >
                     </div>
-                    
                 </div>
                 <p>Platform to create a gaming community</p>
             </div>
