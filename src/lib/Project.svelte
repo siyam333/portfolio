@@ -6,22 +6,22 @@
     let container, two, one, three, four, five, six, seven, eight;
     let pro1, pro2;
     function entry() {
-        document.addEventListener("wheel", (e) => {
-            if (e.deltaY > 0) {
-                let top = pro1.getBoundingClientRect().top;
-                let value = top / 16;
-                one.style.transform = `translateX(0em)`;
-                two.style.transform = `translateY(0em)`;
-                three.style.transform = `translateY(0em)`;
-                four.style.transform = `translate3d(0em,0em,0em)`;
-                five.style.transform = `translateY(0em)`;
-                six.style.transform = `translate3d(0em,0em,0em)`;
-                seven.style.transform = `translateX(0em)`;
-                eight.style.transform = `translateX(0em)`;
-                if (value <= 18.75) {
-                    pro1.style = `transform:rotate(0deg);translateX(-6em);transition:all 1s;`;
-                    pro2.style = `transform:rotate(0deg);translateX(6em);transition:all 1s;`;
-                }
+        one.style.transform = `translateX(0em)`;
+        two.style.transform = `translateY(0em)`;
+        three.style.transform = `translateY(0em)`;
+        four.style.transform = `translate3d(0em,0em,0em)`;
+        five.style.transform = `translateY(0em)`;
+        six.style.transform = `translate3d(0em,0em,0em)`;
+        seven.style.transform = `translateX(0em)`;
+        eight.style.transform = `translateX(0em)`;
+        document.addEventListener("scroll", () => {
+            let top = pro1.getBoundingClientRect().top;
+
+            let value = top / 16;
+
+            if (value <= 18.75) {
+                pro1.style = `transform:rotate(0deg);translateX(-6em);transition:all 1s;`;
+                pro2.style = `transform:rotate(0deg);translateX(6em);transition:all 1s;`;
             }
         });
     }
@@ -35,6 +35,7 @@
         seven.style.transform = `translateX(-2em)`;
         eight.style.transform = `translateX(0.2em)`;
     }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             const event = entry.isIntersecting ? "entry" : "exit";
@@ -45,14 +46,14 @@
         observer.observe(element);
     }
     onMount(() => {
-        one.style = `transform :translateX(-0.3em);transition: all 2s;`;
-        two.style = `transform :translateY(0.6em);transition: all 2s;`;
-        three.style = `transform :translateY(0em);transition: all 2s;`;
-        four.style = `transform :translate3d(0.5em,0.5em,0.7em);transition: all 2s;`;
-        five.style = `transform :translateY(-0.2em);transition: all 2s;`;
-        six.style = `transform :translate3d(-2em,0.6em,0.5em);transition: all 2s;`;
-        seven.style = `transform :translateX(-2em);transition: all 2s;`;
-        eight.style = `transform :translateX(0.2em);transition: all 2s;`;
+        one.style = `transform :translateX(-0.3em);transition: all 3s;`;
+        two.style = `transform :translateY(0.6em);transition: all 3s;`;
+        three.style = `transform :translateY(0em);transition: all 3s;`;
+        four.style = `transform :translate3d(0.5em,0.5em,0.7em);transition: all 3s;`;
+        five.style = `transform :translateY(-0.2em);transition: all 3s;`;
+        six.style = `transform :translate3d(-2em,0.6em,0.5em);transition: all 3s;`;
+        seven.style = `transform :translateX(-2em);transition: all 3s;`;
+        eight.style = `transform :translateX(0.2em);transition: all 3s;`;
     });
 </script>
 
@@ -67,8 +68,14 @@
         <p bind:this={seven}>T</p>
         <p bind:this={eight}>S</p>
     </div>
-    <div class="wrap" >
-        <div class="project" bind:this={pro1} use:viewport on:entry={entry} on:exit={exit}>
+    <div class="wrap">
+        <div
+            class="project"
+            bind:this={pro1}
+            use:viewport
+            on:entry={entry}
+            on:exit={exit}
+        >
             <div class="img"><img src={Port} alt="" /></div>
             <div class="prohead">
                 <div class="heading-sub">
