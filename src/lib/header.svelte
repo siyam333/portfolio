@@ -463,12 +463,7 @@ body{
   .about > .child:nth-child(1) > div:nth-child(2) > img {
     width: 40vw;
   }
-  @media screen and (max-width: 87.5em) {
-    .about {
-      height: 80vh;
-    }
-  }
-  @media screen and (max-width: 52.5em) {
+    @media screen and (max-width: 52.5em) {
     .about {
       height: 40vh;
     }
