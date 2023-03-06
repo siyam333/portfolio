@@ -85,9 +85,9 @@
   function entry() {
     document.addEventListener("scroll", () => {
       const transformValue = window.scrollY * 0.2;
-      first.style = `transform:translateX(${transformValue}px);transition:all 1s`;
-      second.style = `transform:translateX(-${transformValue}px);transition:all 1s`;
-      third.style = `transform:translateX(${transformValue}px);transition:all 1s`;
+      first.style = `transform:translateX(${transformValue}px);transition:all 1s ease-out`;
+      second.style = `transform:translateX(-${transformValue}px);transition:all 1s ease-out`;
+      third.style = `transform:translateX(${transformValue}px);transition:all 1s ease-out`;
     });
   }
   function exit() {}
@@ -255,7 +255,11 @@
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  width: 100vw;
+}
+body{
+  width: 100vw;
 }
   header {
     width: 100vw;
@@ -269,7 +273,7 @@
     justify-content: center;
     align-items: center;
     gap: 1em;
-    height: 10vh;
+    height: 5em;
     margin-block-start: 0em;
     margin-block-end: 0em;
     margin-inline-start: 0px;
@@ -292,7 +296,7 @@
     font-weight: 600;
   }
   .wrapmode {
-    height: 10vh;
+    height: 5em;
     width: 3.5em;
     display: flex;
     position: absolute;
@@ -386,12 +390,14 @@
   }
   main {
     height: 60vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1em;
     font-family: "Changa One", cursive;
+    padding-top: 5em;
   }
   main > h2 {
     margin: 0;
@@ -412,6 +418,7 @@
     color: rgb(227, 221, 42);
   }
   .abtwrap {
+    width: 100vw;
     overflow: hidden;
   }
   .about {
@@ -419,7 +426,6 @@
     flex-direction: column;
     height: 80vh;
     width: 100vw;
-    min-width: 50vw;
     justify-content: center;
     align-items: center;
     transform: rotate(15deg);
