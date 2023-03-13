@@ -505,7 +505,7 @@ body{
       font-size: 2.5em;
     }
     main > h2:nth-child(2) {
-      font-size: 2em;
+      font-size: 1.7em;
     }
 
     header > ul > li > a {
