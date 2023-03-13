@@ -153,7 +153,7 @@
     }
     @media screen and (max-width: 30em) {
         .doin {
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
     }
 </style>
