@@ -295,7 +295,6 @@ body{
     font-weight: 600;
   }
   .wrapmode {
-    height: 5em;
     width: 3.5em;
     display: flex;
     position: absolute;
@@ -306,8 +305,8 @@ body{
     justify-content: center;
   }
   .mode {
-    width: 3em;
-    height: 1.5em;
+    width: 2.7em;
+    height: 1.2em;
     border: 2px solid white;
     border-radius: 1.1em;
     position: absolute;
@@ -323,8 +322,8 @@ body{
   }
 
   .circle {
-    height: 1.2em;
-    width: 1.2em;
+    height: 1em;
+    width: 1em;
     background-color: aliceblue;
     border-radius: 50%;
     transition: transform 0.3s;
