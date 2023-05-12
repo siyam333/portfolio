@@ -9,7 +9,7 @@
     export let theme1;
     
     onMount(()=>{
-        if(dummy=true){
+        if(dummy=true){//error
             theme1=false
             dummy=false
         }

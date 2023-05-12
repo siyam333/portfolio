@@ -1,6 +1,6 @@
 <script>
-    import Rot from "../assets/project/rot2.png";
-    import Port from "../assets/project/portfolio.png";
+    import Rot from "../assets/project/rot2.webp";
+    import Port from "../assets/project/portfolio.webp";
     import Arrow from "../assets/project/arrow.png";
     import { onMount } from "svelte";
     export let theme1

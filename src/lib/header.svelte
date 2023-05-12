@@ -1,20 +1,19 @@
 <script>
   import { onMount } from "svelte";
-  import manutd from "../assets/header/manutd.jpg";
-  import aww from "../assets/header/aww.png";
-  import code from "../assets/header/code.jpg";
-  import figma from "../assets/header/figma.png";
-  import movie from "../assets/header/movie.jpg";
-  import news from "../assets/header/news.jpeg";
-  import paris from "../assets/header/paris.jpg";
-  import real2 from "../assets/header/real2.jpg";
-  import rot from "../assets/header/rot.png";
-  import Road from "../assets/header/road.png";
-  import css from "../assets/header/css.png";
-  import mdn from "../assets/header/mdn.png";
-  import stack from "../assets/header/stack.png";
+  import manutd from "../assets/header/manutd.webp";
+  import aww from "../assets/header/aww.webp";
+  import code from "../assets/header/code.webp";
+  import figma from "../assets/header/figma.webp";
+  import movie from "../assets/header/movie.webp";
+  import news from "../assets/header/news.webp";
+  import paris from "../assets/header/paris.webp";
+  import real2 from "../assets/header/real2.webp";
+  import rot from "../assets/header/rot.webp";
+  import Road from "../assets/header/road.webp";
+  import css from "../assets/header/css.webp";
+  import mdn from "../assets/header/mdn.webp";
+  import stack from "../assets/header/stack.webp";
   import menu from "../assets/header/menu.svg";
-  
   import About from "../lib/About.svelte";
   import Tech from "../lib/Tech.svelte";
   import Project from "../lib/Project.svelte";

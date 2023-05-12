@@ -1,5 +1,5 @@
 <script>
-    import face from "../assets/about/face.jpg";
+    import face from "../assets/about/face.webp";
     export let theme1
     if(theme1==false){
         theme1=!theme1
