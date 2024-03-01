@@ -53,20 +53,7 @@
             <h3>INNOVATE</h3>
             <h3>BURST IT OUT </h3>
         </div>
-        <div class="ppl">
-            <h3>SPECIAL THANKS TO:</h3>
-            <ul>
-                <li>
-                    <a 
-                        href="https://github.com/Rajaniraiyn"
-                        target="_blank"
-                        rel="noreferrer"
-                        > <p class:link={theme1==true} style:--url="url({link})">RAJANIRAIYN</p></a
-                    >
-                </li>
-                <li>TEJASWINI</li>
-            </ul>
-        </div>
+        
     </div>
 </div>
 
@@ -127,32 +114,14 @@
         flex-grow: 1;
         justify-content: space-evenly;
     }
-    .ppl>h3{
-        margin: 0;
-    }
-    .ppl>ul{
-        margin: 0;
-    }
+    
     a {
         text-decoration: none;
         color: rgb(229, 250, 254);
     }
-    a>p{
-        margin: 0;
-    }
-    .link{
-        
-        color: rgb(0, 0, 0);
-        
-    }
-    li {
-        list-style: none;
-    }
-    ul {
-        display: grid;
-        padding: 0;
-        justify-items: center;
-    }
+   
+    
+   
     .inspire {
         display: flex;
         flex-direction: column;
@@ -163,18 +132,10 @@
         margin: 0;
     }
 
-    .thanks > div > ul > li > a:before {
-        content: "";
-        background: var(--url) center/1em;
-        width: 1em;
-        aspect-ratio: 1;
-        display: inline-block;
-    }
+    
     
     @media screen and (max-width: 30em) {
-        .ppl > ul > li {
-            font-size: 0.8em;
-        }
+        
         .contact {
             border-right: 0px solid rgb(0, 0, 0);
         }

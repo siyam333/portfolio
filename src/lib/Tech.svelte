@@ -164,10 +164,7 @@
                 <div class="reveal" class:revealmode={theme1==true}>
                     <h2>PYTHON</h2>
                     <p>
-                        The simplest lang where i came across in my life and i
-                        have a basic knowledge and 1 year of experience with SQL
-                        database too.Further i am planning to learn the API's in
-                        python which helps in AI and DS.
+                        Having commenced Python programming with SQL in 2020, I've found it an enduring choice amidst evolving tech trends. Embracing machine learning, I've implemented real-time project and persist in learning.
                     </p>
                 </div>
             </div>
@@ -188,10 +185,7 @@
                 <div class="reveal" class:revealmode={theme1==true}>
                     <h2>SVELTE</h2>
                     <p>
-                        The only framework i use and made me to love it. The
-                        idea of surgical injection is too good.I have been
-                        working on with svelte and have a good understing about
-                        it.
+                        Svelte, esteemed among developers, garners praise for its innovative compilation-based approach. Embracing its unique implementation, I delve into learning the framework.
                     </p>
                 </div>
             </div>

@@ -42,13 +42,13 @@
             <div class="w2">
                 <div class="idea">
                     <div bind:this={one}>
-                        <p>In order to find my true passion than </p>
+                        <p>Driven to uncover my true passion, I explore diverse fields</p>
                     </div>
                     <div bind:this={two}>
-                        <p>spending my time playing football,</p>
+                        <p>Presently, Im into self-learning full-stack development through open-source materials,</p>
                     </div>
                     <div bind:this={three}>
-                        <p>I have been actively exploring various fields.</p>
+                        <p>enriching my understanding and expanding horizons.</p>
                     </div>
                     <div
                         bind:this={four}
