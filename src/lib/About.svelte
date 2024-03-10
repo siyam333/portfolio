@@ -10,15 +10,13 @@
     let  one, two, three, four, five;
     function entry() {
         one.style = `transform:translateY(0em);opacity:1;`;
-        two.style = `transform:translateY(0em);opacity:1;`;
-        three.style = `transform:translateY(0em);opacity:1;`;
+        
         four.style = `transform:translateY(0em);opacity:1;`;
         five.style = `transform:translateY(0em);opacity:1;`;
     }
     function exit() {
         one.style = `transform:translateY(2em)`;
-        two.style = `transform:translateY(2em)`;
-        three.style = `transform:translateY(2em)`;
+        
         four.style = `transform:translateY(2em)`;
         five.style = `transform:translateY(2em)`;
     }
@@ -42,14 +40,9 @@
             <div class="w2">
                 <div class="idea">
                     <div bind:this={one}>
-                        <p>Driven to uncover my true passion, I explore diverse fields</p>
+                        <p>Driven to uncover my true passion, I'm exploring various fields.</p>
                     </div>
-                    <div bind:this={two}>
-                        <p>Presently, Im into self-learning full-stack development through open-source materials,</p>
-                    </div>
-                    <div bind:this={three}>
-                        <p>enriching my understanding and expanding horizons.</p>
-                    </div>
+                    
                     <div
                         bind:this={four}
                         use:viewport
